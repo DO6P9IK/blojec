@@ -38,7 +38,7 @@
     <h3>Свежие публикации</h3>
     {% show_latest_posts 5 %}
 
-      <h3>Самые рекомендуемые посты</h3>
+      <h3>Самые популярные публикации</h3>
       {% get_most_commented_posts as most_commented_posts %}
       <ul>
          {% for post in most_commented_posts %}
