@@ -25,14 +25,18 @@
     <hr>
     {% if user.is_authenticated %}
         Привет, {{ user.username }}!
-    <form action="{% url 'logout' %}" method="post">
-        {% csrf_token %}
-        <a href="#" onclick="parentNode.submit();">Выйти</a>
-    </form>
+        <p><a href="{% url 'users-profile' %}">Мой профиль</a></p>
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <a href="#" onclick="parentNode.submit();">Выйти</a>
+        </form>
     {% else %}
         <p>Вы не авторизованы</p>
-        <a href="{% url 'login' %}">Войти</a> | 
-        <a href="{% url 'signup' %}">Зарегистрироваться</a>
+        <p>
+            <a href="{% url 'login' %}">Войти</a> | 
+            <a href="{% url 'signup' %}">Регистрация</a>
+        </p>
+        <p><a href="{% url 'password_reset' %}">Забыли пароль?</a></p>
     {% endif %}
     <hr>
     <h3>Свежие публикации</h3>
