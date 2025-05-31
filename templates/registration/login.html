@@ -2,6 +2,8 @@
 {% block title %} Войти {% endblock %}
 {% block content %}
     <h2> Войти </h2>
+    <a href="{% url 'social:begin' 'github' %}">Войти с помощью GitHub</a>
+    <br><a href="{% url 'social:begin' 'google-oauth2' %}">Войти с помощью Google</a>
     <form method="post">
         {{ form.as_p }}
         {% csrf_token %}
